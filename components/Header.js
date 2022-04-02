@@ -6,6 +6,8 @@ import {ChevronDownIcon} from "@heroicons/react/solid"
 import NavbarItem from "./NavbarItem"
 import Link from "next/link"
 
+import config from "../config.json"
+
 const solutions = [
   {
     name: "Latest",
@@ -50,7 +52,7 @@ export default function Example() {
                     alt=""
                 />
                 <p className="text-lg font-semibold text-white">
-                  johncena141
+                  {config.appName}
                 </p>
               </a>
             </Link>
@@ -253,7 +255,7 @@ export default function Example() {
                         alt="Workflow"
                     />
                     <p className="font-semibold text-white">
-                      johncena141
+                      {config.appName}
                     </p>
                   </div>
                   <div className="-mr-2">
