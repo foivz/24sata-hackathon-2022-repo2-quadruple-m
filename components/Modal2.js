@@ -3,6 +3,7 @@ import React, { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationIcon, XIcon } from '@heroicons/react/outline'
 import Input from "./Input/Input";
+import Dropdown from "./dropdown/ListDropdown";
 
 export default function Example({onRemove, onAdd, open, setOpen}) {
     const [inputName, setInputName] = useState("")
@@ -69,6 +70,7 @@ export default function Example({onRemove, onAdd, open, setOpen}) {
                                             <Input dark title="Naziv" onChangeHandler={e => setInputName(e.target.value)} placeholder="Sir"/>
                                             <Input dark title="Cijena" onChangeHandler={e => setInputPrice(e.target.value)} placeholder="5.99"/>
                                             <Input dark title="Količina" onChangeHandler={e => setInputQuantity(e.target.value)} placeholder="4"/>
+                                            <Dropdown/>
                                         </div>
                                     </div>
                                 </div>

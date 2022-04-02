@@ -17,12 +17,12 @@ const solutions = [
     href: "#latest",
     icon: ChartBarIcon,
   },
-  {
-    name: "Zandonini",
-    description: "Obitelj",
-    href: "#popular",
-    icon: CursorClickIcon,
-  },
+  // {
+  //   name: "Zandonini",
+  //   description: "Obitelj",
+  //   href: "#popular",
+  //   icon: CursorClickIcon,
+  // },
 ]
 const resources = [
   {

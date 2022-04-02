@@ -12,7 +12,7 @@ let def = [
 ]
 
 
-export default function Example() {
+export default function Example({addon}) {
     const [i, setI] = useState(0);
 
     const [open,setOpen] = useState(false)
@@ -52,6 +52,11 @@ export default function Example() {
     })
 
     cijena = cijena.toFixed(2)
+
+    const add = target => {
+        addon(target);
+        def = [];
+    }
 
     return (
         <div>
@@ -159,7 +164,7 @@ export default function Example() {
                 </table>
             </div>
             <div className="flex flex-row space-x-4">
-                <Button text="Dodaj kao trošak" onClickHandler={openModal}/>
+                <Button text="Dodaj kao trošak" onClickHandler={() => add({name:new Date().toString(),price:cijena,date: "03-04-2022"})}/>
                 <Button text="Dodaj novi artikl" onClickHandler={openModal}/>
             </div>
         </div>

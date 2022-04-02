@@ -6,14 +6,16 @@ import ListModal from "./ListModal";
 import Modalv2 from "./TrosakModal"
 import {XCircleIcon} from "@heroicons/react/outline"
 
-let def = [
+let trosak_def = [
     {name: 'Organizacija', price: 100, date: "01-01-2022"},
     {name: 'Napad na Japan', price: 200, date: "01-01-2022"},
     {name: 'Izbjeglice',price: 300, date: "01-02-2022"},
 ]
 
-export default function Example({onChange}) {
+export default function Example({onChange, addon}) {
     const [i, setI] = useState(0);
+
+    let def = trosak_def.concat(addon);
 
     const [open,setOpen] = useState(false)
 

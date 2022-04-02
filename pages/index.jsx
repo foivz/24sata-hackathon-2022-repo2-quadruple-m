@@ -47,6 +47,12 @@ export default function Home() {
         setData(tmp)
     }, [])
 
+    const [moveableTrosak, setMoveableTrosak] = useState([])
+    const addTrosak = trosak => {
+        console.log(trosak)
+        setMoveableTrosak(moveableTrosak.concat(trosak))
+    }
+
     return (
         <HOC redirect={true}>
             <div className="">
@@ -68,11 +74,11 @@ export default function Home() {
                         <WideContainer>
                             <div className="space-y-6 lg:grid lg:grid-cols-2 lg:gap-4 lg:space-y-0">
                                 <div className="flex flex-col space-y-8">
-                                    <TrosakList onChange={setTrosak}/>
+                                    <TrosakList onChange={setTrosak} addon={moveableTrosak} />
                                     <IncomeList onChange={setPrihodi}/>
                                 </div>
                                 <div className="flex flex-col space-y-8">
-                                    <ItemList/>
+                                    <ItemList addon={addTrosak}/>
                                     <SimpleChart data={data}/>
                                 </div>
                             </div>

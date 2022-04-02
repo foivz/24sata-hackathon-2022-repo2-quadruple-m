@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {Modal, ModalBody, ModalFooter, ModalHeader} from '@windmill/react-ui'
 import Button from "../components/Button"
 import Input from "./Input/Input";
+import Dropdown from "../components/dropdown/ListDropdown"
 
 function ModalPage({onRemove, onAdd}) {
     const [inputName, setInputName] = useState("")
