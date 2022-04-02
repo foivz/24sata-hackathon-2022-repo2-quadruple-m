@@ -7,6 +7,7 @@ import Login from "../components/Login"
 import HOC from "../hoc/hoc"
 
 export default function Home() {
+
     return (
         <HOC redirect={false} render={true}>
 
@@ -16,7 +17,7 @@ export default function Home() {
                     <link rel="icon" href="/favicon.ico"/>
                 </Head>
 
-                <Header/>
+                {/*<Header/>*/}
 
                 <main className="mx-auto mt-2 max-w-7xl text-secondary-50 sm:px-6 lg:px-8">
                     <div className="flex flex-col space-y-4 py-2">

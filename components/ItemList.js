@@ -1,27 +1,13 @@
 import {useState} from "react";
 import {MinusCircleIcon, PlusCircleIcon,} from "@heroicons/react/outline"
+import Input from "../components/Input/Input"
+import Button from "./Button";
+import ListModal from "./ListModal";
 
 let def = [
     {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijedsako', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'S', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlidsadasjeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
-    {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
+    {name: 'Sir', price: 5.33, quantity: 1, isFinished: false},
+    {name: 'Vino', price: 5.33, quantity: 1, isFinished: false},
 ]
 
 
@@ -44,6 +30,7 @@ export default function Example() {
         if (def[idx].quantity > 0) def[idx].quantity--;
         setI(i + 1)
     }
+
 
     return (
         <div className="px-4 sm:px-6 lg:px-8">
@@ -69,15 +56,19 @@ export default function Example() {
                             Cijena
                         </th>
 
-                        <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                            <span className="sr-only">Edit</span>
+                        <th
+                            scope="col"
+                            className="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell"
+                        >
+                            Količina
                         </th>
                     </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 bg-gray-50">
+
                     {def.map((person, idx) => (
                         def[idx].isFinished ?
-                            <tr className="bg-gradient-to-r from-cyan-500 to-blue-500">
+                            <tr className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-200">
                                 <td className="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
                                     <div className="flex items-center h-5">
                                         <input
@@ -131,6 +122,7 @@ export default function Example() {
                             </tr>
 
                     ))}
+
                     </tbody>
                 </table>
             </div>
