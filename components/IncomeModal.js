@@ -62,7 +62,7 @@ export default function Example({onRemove, onAdd, open, setOpen}) {
                             <div className="flex justify-center items-center">
                                 <div className="mt-3 text-center">
                                     <Dialog.Title as="h3" className="text-xl leading-6 font-medium text-gray-100">
-                                        Novi trošak
+                                        Novi prihod
                                     </Dialog.Title>
                                     <div className="flex flex-col items-center px-4 py-3 mb-8 bg-gray-800 rounded-lg shadow-md dark:bg-gray-800">
                                         <div className="flex flex-col space-y-4 mb-4">

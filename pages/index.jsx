@@ -11,12 +11,39 @@ import IncomeList from "../components/IncomeList"
 import Lists from "../components/Lists"
 import ItemList from "../components/ItemList";
 import ListModal from "../components/ListModal";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Button from "../components/Button";
+import SimpleChart from "../components/charts/SimpleChart"
 
 const ime_grupe = "Obitelj"
 
 export default function Home() {
+
+    const [prihodi, setPrihodi] = useState([])
+    const [trosak, setTrosak] = useState([])
+
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        let tmp = []
+
+        for (let i = 0; i < prihodi.length; i++) {
+            tmp.push({name: prihodi[i].date || trosak[i].date, prihod: parseFloat(prihodi[i].price) || 0, trosak: parseFloat(trosak[i].price) || 0, amt: 2400})
+
+        }
+
+        setData(tmp)
+    }, [prihodi, trosak])
+
+    useEffect(() => {
+        let tmp = []
+
+        for (let i = 0; i < prihodi.length; i++) {
+            tmp.push({name: prihodi[i].date || trosak[i].date, prihod: parseFloat(prihodi[i].price) || 0, trosak: parseFloat(trosak[i].price) || 0, amt: 2400})
+        }
+
+        setData(tmp)
+    }, [])
 
     return (
         <HOC redirect={true}>
@@ -39,11 +66,12 @@ export default function Home() {
                         <WideContainer>
                             <div className="space-y-6 lg:grid lg:grid-cols-2 lg:gap-4 lg:space-y-0">
                                 <div className="flex flex-col space-y-8">
-                                    <TrosakList/>
-                                    <IncomeList/>
+                                    <TrosakList onChange={setTrosak}/>
+                                    <IncomeList onChange={setPrihodi}/>
                                 </div>
-                                <div className="flex flex-col px-4">
+                                <div className="flex flex-col space-y-8">
                                     <ItemList/>
+                                    <SimpleChart data={data}/>
                                 </div>
                             </div>
                         </WideContainer>

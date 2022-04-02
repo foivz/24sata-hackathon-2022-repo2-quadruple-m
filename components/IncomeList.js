@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {MinusCircleIcon, PlusCircleIcon,} from "@heroicons/react/outline"
 import Input from "../components/Input/Input"
 import Button from "./Button";
@@ -6,16 +6,20 @@ import ListModal from "./ListModal";
 import Modalv2 from "./IncomeModal"
 
 let def = [
-    {name: 'Kurva 1', price: 2, date: "Danas"},
-    {name: 'Kurva 3', price: 1, date: "Sutra"},
-    {name: 'Kurva 2',price: 3, date: "Jučer"},
+    {name: 'Tonald Drump', price: 223, date: "01-01-2022"},
+    {name: 'Bil Gejc', price: 155, date: "01-01-2022"},
+    {name: 'Ilon Mask',price: 3322, date: "02-01-2022"},
 ]
 
 
-export default function Example() {
+export default function Example({onChange}) {
     const [i, setI] = useState(0);
 
     const [open,setOpen] = useState(false)
+
+    useEffect(() => {
+        onChange(def)
+    }, [])
 
     const openModal = () => {
         setOpen(true)
@@ -23,6 +27,7 @@ export default function Example() {
 
     const onModalAdd = (name, price, date) => {
         def.push({name, price, date})
+        onChange(def)
         setI(i + 1)
         setOpen(false)
     }
