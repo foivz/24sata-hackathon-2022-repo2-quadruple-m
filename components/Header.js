@@ -14,15 +14,15 @@ const solutions = [
   {
     name: "Osobni ",
     description: "Osobne financije",
-    href: "#latest",
+    href: "/",
     icon: ChartBarIcon,
   },
-  // {
-  //   name: "Zandonini",
-  //   description: "Obitelj",
-  //   href: "#popular",
-  //   icon: CursorClickIcon,
-  // },
+  {
+    name: "Nova grupu",
+    description: "Kreairaj novu grupu s listama",
+    href: "/pricing",
+    icon: CursorClickIcon,
+  },
 ]
 const resources = [
   {

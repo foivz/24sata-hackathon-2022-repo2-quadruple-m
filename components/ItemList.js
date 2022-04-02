@@ -164,7 +164,7 @@ export default function Example({addon}) {
                 </table>
             </div>
             <div className="flex flex-row space-x-4">
-                <Button text="Dodaj kao trošak" onClickHandler={() => add({name:new Date().toString(),price:cijena,date: "03-04-2022"})}/>
+                <Button text="Dodaj kao trošak" onClickHandler={() => add({name:"Kupovina",price:cijena,date: "03-04-2022"})}/>
                 <Button text="Dodaj novi artikl" onClickHandler={openModal}/>
             </div>
         </div>
