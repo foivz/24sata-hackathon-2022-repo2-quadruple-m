@@ -8,7 +8,7 @@ import Modalv2 from "./IncomeModal"
 let def = [
     {name: 'Tonald Drump', price: 223, date: "01-01-2022"},
     {name: 'Bil Gejc', price: 155, date: "01-01-2022"},
-    {name: 'Ilon Mask',price: 3322, date: "02-01-2022"},
+    {name: 'Ilon Mask',price: 322, date: "02-01-2022"},
 ]
 
 
@@ -95,7 +95,7 @@ export default function Example({onChange}) {
                             scope="col"
                             className="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell"
                         >
-                            
+
                         </th>
 
 

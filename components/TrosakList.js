@@ -7,11 +7,10 @@ import Modalv2 from "./TrosakModal"
 import {XCircleIcon} from "@heroicons/react/outline"
 
 let def = [
-    {name: 'Organizacija', price: 1, date: "01-01-2022"},
-    {name: 'Napad na Japan', price: 2, date: "01-01-2022"},
-    {name: 'Izbjeglice',price: 3, date: "01-02-2022"},
+    {name: 'Organizacija', price: 100, date: "01-01-2022"},
+    {name: 'Napad na Japan', price: 200, date: "01-01-2022"},
+    {name: 'Izbjeglice',price: 300, date: "01-02-2022"},
 ]
-
 
 export default function Example({onChange}) {
     const [i, setI] = useState(0);

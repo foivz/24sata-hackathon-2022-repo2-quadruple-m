@@ -27,9 +27,10 @@ export default function Home() {
     useEffect(() => {
         let tmp = []
 
-        for (let i = 0; i < prihodi.length; i++) {
+        let size = prihodi.length;
+        if (trosak.length > size) size = trosak.length
+        for (let i = 0; i < size; i++) {
             tmp.push({name: prihodi[i].date || trosak[i].date, prihod: parseFloat(prihodi[i].price) || 0, trosak: parseFloat(trosak[i].price) || 0, amt: 2400})
-
         }
 
         setData(tmp)
@@ -37,8 +38,9 @@ export default function Home() {
 
     useEffect(() => {
         let tmp = []
-
-        for (let i = 0; i < prihodi.length; i++) {
+        let size = prihodi.length;
+        if (trosak.length > size) size = trosak.length
+        for (let i = 0; i < size; i++) {
             tmp.push({name: prihodi[i].date || trosak[i].date, prihod: parseFloat(prihodi[i].price) || 0, trosak: parseFloat(trosak[i].price) || 0, amt: 2400})
         }
 
