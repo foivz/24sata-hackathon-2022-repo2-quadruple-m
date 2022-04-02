@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import {Fragment} from "react"
+import {Fragment, useState} from "react"
 import {Popover, Transition} from "@headlessui/react"
 import {ChartBarIcon, CursorClickIcon, MenuIcon, XIcon,} from "@heroicons/react/outline"
 import {ChevronDownIcon} from "@heroicons/react/solid"
@@ -7,6 +7,8 @@ import NavbarItem from "./NavbarItem"
 import Link from "next/link"
 
 import config from "../config.json"
+import {getDefaultUser} from "../utils/userUtils";
+import ProfileButton from "./ProfileButton";
 
 const solutions = [
   {
@@ -34,7 +36,14 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
+let userNavigation = [
+  {name: 'Odjava', href: '/logout', current: false},
+]
+
 export default function Example() {
+
+  const [user, setUser] = useState(getDefaultUser())
+
   return (
       <Popover className="relative bg-black">
         <div className="flex items-center justify-between px-4 py-2 sm:px-6 md:justify-start md:space-x-10">
@@ -46,6 +55,7 @@ export default function Example() {
               <a
                   className="flex flex-row items-center space-x-2"
               >
+
                 <img
                     className="h-8 w-auto rounded sm:h-10"
                     src="/favicon.ico"
@@ -228,6 +238,7 @@ export default function Example() {
             {/*        Sign up*/}
             {/*    </a>*/}
             {/*</div>*/}
+            <ProfileButton user={user} userNavigation={userNavigation}/>
           </div>
         </div>
 
