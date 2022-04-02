@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {MinusCircleIcon, PlusCircleIcon,} from "@heroicons/react/outline"
+import {MinusCircleIcon, PlusCircleIcon, XCircleIcon,} from "@heroicons/react/outline"
 import Input from "../components/Input/Input"
 import Button from "./Button";
 import ListModal from "./ListModal";
@@ -23,6 +23,12 @@ export default function Example({onChange}) {
 
     const openModal = () => {
         setOpen(true)
+    }
+
+    const remove = (index) => {
+        def = def.filter((item, idx) => index !== idx)
+        setI(i + 1)
+        setOpen(false)
     }
 
     const onModalAdd = (name, price, date) => {
@@ -85,6 +91,12 @@ export default function Example({onChange}) {
                         >
                             Datum
                         </th>
+                        <th
+                            scope="col"
+                            className="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell"
+                        >
+                            
+                        </th>
 
 
                     </tr>
@@ -100,6 +112,9 @@ export default function Example({onChange}) {
                                         <p className="flex items-center text-center justify-center text-md">{item.date}</p>
                                     </div>
                                 </td>
+                                <td className="hidden px-3 py-4 text-md text-gray-700 sm:table-cell" onClick={() => remove(idx)}>
+                                    <XCircleIcon className="text-red-500 h-8"/>
+                                </td>
                             </tr>
 
                     ))}
@@ -107,6 +122,7 @@ export default function Example({onChange}) {
                     <tr>
                         <td className="hidden px-3 py-4 text-md text-gray-800 font-medium lg:table-cell">Ukupni trošak</td>
                         <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell">{cijena}</td>
+                        <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell"></td>
                         <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell"></td>
                     </tr>
 
