@@ -21,8 +21,8 @@ export default function Example() {
         setOpen(true)
     }
 
-    const onModalAdd = (name, price, quantity) => {
-        def.push({name, price, quantity, isFinished: false})
+    const onModalAdd = (name, price, date) => {
+        def.push({name, price, date})
         setI(i + 1)
         setOpen(false)
     }
@@ -48,7 +48,7 @@ export default function Example() {
 
     let cijena = 0;
     def.forEach(item => {
-        cijena+=parseInt(item.quantity)*parseFloat(item.price)
+        cijena+=parseFloat(item.price)
     })
 
     cijena = cijena.toFixed(2)
@@ -100,6 +100,11 @@ export default function Example() {
 
                     ))}
 
+                    <tr>
+                        <td className="hidden px-3 py-4 text-md text-gray-800 font-medium lg:table-cell">Ukupni trošak</td>
+                        <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell">{cijena}</td>
+                        <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell"></td>
+                    </tr>
 
                     </tbody>
                 </table>
