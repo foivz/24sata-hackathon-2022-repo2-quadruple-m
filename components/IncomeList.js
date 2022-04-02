@@ -3,7 +3,7 @@ import {MinusCircleIcon, PlusCircleIcon,} from "@heroicons/react/outline"
 import Input from "../components/Input/Input"
 import Button from "./Button";
 import ListModal from "./ListModal";
-import Modalv2 from "./TrosakModal"
+import Modalv2 from "./IncomeModal"
 
 let def = [
     {name: 'Kurva 1', price: 2, date: "Danas"},
@@ -57,7 +57,7 @@ export default function Example() {
         <div>
             <Modalv2 onAdd={onModalAdd} open={open} setOpen={setOpen}/>
             <h1 className="text-2xl font-semibold text-center">
-                Troškovi
+                Prihodi
             </h1>
             <div
                 className="-mx-4 my-4 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
@@ -110,7 +110,7 @@ export default function Example() {
             </div>
             <div className="flex flex-row space-x-4">
                 {/*<Button text="Dodaj novi artikl" onClickHandler={openModal}/>*/}
-                <Button text="Novi trošak" onClickHandler={openModal}/>
+                <Button text="Novi dohodak" onClickHandler={openModal}/>
             </div>
         </div>
     )
