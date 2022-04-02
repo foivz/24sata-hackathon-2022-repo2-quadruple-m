@@ -9,6 +9,7 @@ const instance = axios.create({baseURL: endpoint})
 
 const hoc = ({children, redirect, render}) => {
     const [isLogged, setIsLogged] = useState()
+const router = useRouter()
 
     instance.get("auth", {headers: {authorization: cookies.get("auth") || ""}}).then(res => {
         setIsLogged(res.data.isValid);
@@ -22,6 +23,7 @@ const hoc = ({children, redirect, render}) => {
         if (typeof window !== "undefined") {
             if (!window.location.href.endsWith("login")) {
                 window.location.href = "/login"
+                // if (router) router.push("/")
             }
 
         }

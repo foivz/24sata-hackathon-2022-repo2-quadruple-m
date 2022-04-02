@@ -12,14 +12,14 @@ import ProfileButton from "./ProfileButton";
 
 const solutions = [
   {
-    name: "Latest",
-    description: "View the latest game",
+    name: "Osobni ",
+    description: "Osobne financije",
     href: "#latest",
     icon: ChartBarIcon,
   },
   {
-    name: "Most Popular",
-    description: "Browse the most popular game",
+    name: "Zandonini",
+    description: "Obitelj",
     href: "#popular",
     icon: CursorClickIcon,
   },
@@ -87,7 +87,7 @@ export default function Example() {
                               "group inline-flex items-center rounded-md bg-black text-base font-medium hover:text-secondary-50 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2"
                           )}
                       >
-                        <span>Games</span>
+                        <span>Grupe</span>
                         <ChevronDownIcon
                             className={classNames(
                                 open
