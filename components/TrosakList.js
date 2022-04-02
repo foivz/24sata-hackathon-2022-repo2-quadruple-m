@@ -93,12 +93,6 @@ export default function Example({onChange, addon}) {
                         >
                             Datum
                         </th>
-                        <th
-                            scope="col"
-                            className="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell"
-                        >
-
-                        </th>
 
 
                     </tr>
@@ -114,9 +108,6 @@ export default function Example({onChange, addon}) {
                                         <p className="flex items-center text-center justify-center text-md">{item.date}</p>
                                     </div>
                                 </td>
-                                <td className="hidden px-3 py-4 text-md text-gray-700 sm:table-cell" onClick={() => remove(idx)}>
-                                    <XCircleIcon className="text-red-500 h-8"/>
-                                </td>
                             </tr>
 
                     ))}
@@ -124,7 +115,6 @@ export default function Example({onChange, addon}) {
                     <tr>
                         <td className="hidden px-3 py-4 text-md text-gray-800 font-medium lg:table-cell">Ukupni trošak</td>
                         <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell">{cijena}</td>
-                        <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell"></td>
                         <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell"></td>
                     </tr>
 
