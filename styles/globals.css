@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*@layer utilities {*/
+/*    .content-auto {*/
+/*        content-visibility: auto;*/
+/*    }*/
+/*}*/
+
+body {
+    @apply bg-primary-800;
+}
