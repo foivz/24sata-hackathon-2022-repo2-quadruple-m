@@ -10,25 +10,11 @@ import Lists from "../components/Lists"
 import ItemList from "../components/ItemList";
 import ListModal from "../components/ListModal";
 import {useState} from "react";
+import Button from "../components/Button";
 
-const ime_grupe = "Grupa A"
+const ime_grupe = "Obitelj"
 
 export default function Home() {
-
-    const [isOpen, setModalOpened] = useState(true);
-
-    // if (isOpen) return (
-    //     <>
-    //         <div className="px-4 sm:px-6 lg:px-8">
-    //             <div
-    //                 className="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
-    //                 <ListModal/>
-    //             </div>
-    //         </div>
-    //     </>
-    // )
-
-
 
     return (
         <HOC redirect={true}>
@@ -53,7 +39,7 @@ export default function Home() {
                                 <div>
 
                                 </div>
-                                <div>
+                                <div className="flex flex-col px-4">
                                     <ItemList/>
                                 </div>
                             </div>

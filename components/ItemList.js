@@ -3,6 +3,7 @@ import {MinusCircleIcon, PlusCircleIcon,} from "@heroicons/react/outline"
 import Input from "../components/Input/Input"
 import Button from "./Button";
 import ListModal from "./ListModal";
+import Modalv2 from "./Modal2"
 
 let def = [
     {name: 'Mlijeko', price: 5.33, quantity: 1, isFinished: false},
@@ -13,6 +14,19 @@ let def = [
 
 export default function Example() {
     const [i, setI] = useState(0);
+
+    const [open,setOpen] = useState(false)
+
+    const openModal = () => {
+        setOpen(true)
+    }
+
+    const onModalAdd = (name, price, quantity) => {
+        def.push({name, price, quantity, isFinished: false})
+        setI(i + 1)
+       setOpen(false)
+    }
+
 
     const changeClickedState = (e, idx) => {
         def[idx].isFinished = e.target.checked
@@ -33,7 +47,9 @@ export default function Example() {
 
 
     return (
-        <div className="px-4 sm:px-6 lg:px-8">
+        <div>
+            <Button text="Dodaj novi artikl" onClickHandler={openModal}/>
+            <Modalv2 onAdd={onModalAdd} open={open} setOpen={setOpen}/>
             <div
                 className="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
                 <table className="min-w-full divide-y divide-gray-300">
@@ -66,8 +82,8 @@ export default function Example() {
                     </thead>
                     <tbody className="divide-y divide-gray-200 bg-gray-50">
 
-                    {def.map((person, idx) => (
-                        def[idx].isFinished ?
+                    {def.map((item, idx) => (
+                        item.isFinished ?
                             <tr className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-200">
                                 <td className="w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6">
                                     <div className="flex items-center h-5">
@@ -81,13 +97,13 @@ export default function Example() {
                                         />
                                     </div>
                                 </td>
-                                <td className="hidden px-3 py-4 text-md text-gray-50 lg:table-cell">{person.name}</td>
-                                <td className="hidden px-3 py-4 text-md text-gray-50 sm:table-cell">{person.price}</td>
+                                <td className="hidden px-3 py-4 text-md text-gray-50 lg:table-cell">{item.name}</td>
+                                <td className="hidden px-3 py-4 text-md text-gray-50 sm:table-cell">{item.price}</td>
                                 <td className="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     <div href="#" className="text-gray-300 flex flex-row space-x-1.5">
                                         <PlusCircleIcon className="hover:cursor-pointer text-green-600 h-8"
                                                         onClick={() => itemPlus(idx)}/>
-                                        <p className="flex items-center text-gray-50 text-center justify-center text-xl">{person.quantity}</p>
+                                        <p className="flex items-center text-gray-50 text-center justify-center text-xl">{item.quantity}</p>
                                         <MinusCircleIcon className="hover:cursor-pointer text-red-600 h-8"
                                                          onClick={() => itemMinus(idx)}/>
                                     </div>
@@ -108,13 +124,13 @@ export default function Example() {
                                         />
                                     </div>
                                 </td>
-                                <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell">{person.name}</td>
-                                <td className="hidden px-3 py-4 text-md text-gray-500 sm:table-cell">{person.price}</td>
+                                <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell">{item.name}</td>
+                                <td className="hidden px-3 py-4 text-md text-gray-500 sm:table-cell">{item.price}</td>
                                 <td className="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     <div href="#" className="text-gray-700 flex flex-row space-x-1.5">
                                         <PlusCircleIcon className="hover:cursor-pointer text-green-500 h-8"
                                                         onClick={() => itemPlus(idx)}/>
-                                        <p className="flex items-center text-center justify-center text-xl">{person.quantity}</p>
+                                        <p className="flex items-center text-center justify-center text-xl">{item.quantity}</p>
                                         <MinusCircleIcon className="hover:cursor-pointer text-red-500 h-8"
                                                          onClick={() => itemMinus(idx)}/>
                                     </div>
