@@ -1,5 +1,4 @@
 import "../styles/globals.css"
-import type {AppProps} from "next/app"
 import {useState} from "react";
 import axios from "axios"
 import config from "../config.json"
@@ -10,7 +9,7 @@ import {useRouter} from "next/router";
 const endpoint = getEndpoint()
 const instance = axios.create({baseURL: endpoint})
 
-function MyApp({Component, pageProps}: AppProps) {
+function MyApp({Component, pageProps}) {
         return <Component {...pageProps} />
 }
 
