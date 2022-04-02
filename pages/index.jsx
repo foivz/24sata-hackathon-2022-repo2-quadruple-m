@@ -6,6 +6,7 @@ import config from "../config.json"
 import HOC from "../hoc/hoc"
 import Item from "../components/Item"
 
+import TrosakList from "../components/TrosakList"
 import Lists from "../components/Lists"
 import ItemList from "../components/ItemList";
 import ListModal from "../components/ListModal";
@@ -37,7 +38,7 @@ export default function Home() {
                         <WideContainer>
                             <div className="space-y-6 lg:grid lg:grid-cols-2 lg:gap-4 lg:space-y-0">
                                 <div>
-
+                                    <TrosakList/>
                                 </div>
                                 <div className="flex flex-col px-4">
                                     <ItemList/>

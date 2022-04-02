@@ -46,12 +46,21 @@ export default function Example() {
     }
 
 
+    let cijena = 0;
+    def.forEach(item => {
+        cijena+=parseInt(item.quantity)*parseFloat(item.price)
+    })
+
+    cijena = cijena.toFixed(2)
+
     return (
         <div>
-            <Button text="Dodaj novi artikl" onClickHandler={openModal}/>
             <Modalv2 onAdd={onModalAdd} open={open} setOpen={setOpen}/>
+            <h1 className="text-2xl font-semibold text-center">
+                Popis za kupovinu
+            </h1>
             <div
-                className="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
+                className="-mx-4 my-4 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
                 <table className="min-w-full divide-y divide-gray-300">
                     <thead className="bg-gray-50">
                     <tr>
@@ -124,8 +133,8 @@ export default function Example() {
                                         />
                                     </div>
                                 </td>
-                                <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell">{item.name}</td>
-                                <td className="hidden px-3 py-4 text-md text-gray-500 sm:table-cell">{item.price}</td>
+                                <td className="hidden px-3 py-4 text-md text-gray-700 lg:table-cell">{item.name}</td>
+                                <td className="hidden px-3 py-4 text-md text-gray-700 sm:table-cell">{item.price}</td>
                                 <td className="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     <div href="#" className="text-gray-700 flex flex-row space-x-1.5">
                                         <PlusCircleIcon className="hover:cursor-pointer text-green-500 h-8"
@@ -139,8 +148,18 @@ export default function Example() {
 
                     ))}
 
+                    <tr>
+                        <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell"></td>
+                        <td className="hidden px-3 py-4 text-md text-gray-800 font-medium lg:table-cell">Ukupna cijena</td>
+                        <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell">{cijena}</td>
+                        <td className="hidden px-3 py-4 text-md text-gray-500 lg:table-cell"></td>
+                    </tr>
                     </tbody>
                 </table>
+            </div>
+            <div className="flex flex-row space-x-4">
+                <Button text="Dodaj kao trošak" onClickHandler={openModal}/>
+                <Button text="Dodaj novi artikl" onClickHandler={openModal}/>
             </div>
         </div>
     )
