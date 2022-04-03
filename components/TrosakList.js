@@ -8,7 +8,7 @@ import {XCircleIcon} from "@heroicons/react/outline"
 
 let trosak_def = [
     {name: 'Organizacija', price: 100, date: "01-01-2022"},
-    {name: 'Napad na Japan', price: 200, date: "01-01-2022"},
+    {name: 'Crkva', price: 200, date: "01-01-2022"},
     {name: 'Izbjeglice',price: 300, date: "01-02-2022"},
 ]
 

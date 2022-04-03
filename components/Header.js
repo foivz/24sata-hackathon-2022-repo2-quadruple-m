@@ -18,7 +18,7 @@ const solutions = [
     icon: ChartBarIcon,
   },
   {
-    name: "Nova grupu",
+    name: "Nova grupa",
     description: "Kreairaj novu grupu s listama",
     href: "/pricing",
     icon: CursorClickIcon,
@@ -164,7 +164,8 @@ export default function Example() {
                     </>
                 )}
               </Popover>
-              <NavbarItem text=""/>
+              <NavbarItem text="Troškovi" href="/troskovi"/>
+              <NavbarItem text="Prihodi" href="/prihodi"/>
 
               <Popover className="relative">
                 {({open}) => (

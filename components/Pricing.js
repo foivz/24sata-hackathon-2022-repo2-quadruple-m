@@ -46,8 +46,8 @@ export default function Example() {
                     {tiers.map((tier, idx) => (
                         <div key={tier.name} className="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
                             <div className="p-6">
-                                <h2 className="text-lg leading-6 font-medium text-gray-900 text-center">{tier.name}</h2>
-                                <p className="mt-4 text-sm text-gray-900 text-center">{tier.description}</p>
+                                <h2 className="text-xl font-semibold leading-6 font-medium text-gray-900 text-center">{tier.name}</h2>
+                                <p className="mt-4 text-gray-900 text-center">{tier.description}</p>
                                 <p className="mt-8 text-center">
                                     <span className="text-4xl font-extrabold text-white">HRK{tier.priceMonthly}</span>{' '}
                                     <span className="text-base font-medium text-gray-50">/mj</span>
@@ -55,7 +55,7 @@ export default function Example() {
                                 {idx === 3 ?
                                     <a
                                         href={tier.href}
-                                        className="transition-all scale-100 hover:scale-150 mt-8 block w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 border border-gray-800 rounded-md py-2 font-semibold text-white text-center hover:bg-gray-900"
+                                        className="transition-all scale-100 hover:scale-150 mt-8 block w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 border border-gray-800 rounded-md py-2 font-bold text-white text-center hover:bg-gray-900"
                                     >
                                         Kupi {tier.name}
                                     </a>
